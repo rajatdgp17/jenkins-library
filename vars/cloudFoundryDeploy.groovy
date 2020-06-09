@@ -276,9 +276,9 @@ def deployMta(config) {
     def deployCommand = 'deploy'
     if (config.deployType == 'blue-green') {
         deployCommand = 'bg-deploy'
-        if (config.mtaDeployParameters.indexOf('--no-confirm') < 0) {
-            config.mtaDeployParameters += ' --no-confirm'
-        }
+   //     if (config.mtaDeployParameters.indexOf('--no-confirm') < 0) {
+   //         config.mtaDeployParameters += ' --no-confirm'
+   //     }
     }
 
     def deployStatement = "cf ${deployCommand} ${config.mtaPath} ${config.mtaDeployParameters} ${config.mtaExtensionDescriptor}"
